@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>真格AI产品适配测试 - 测一测你最适合的AI产品</title>
+  <meta name="description" content="这是一个帮你找到最适合你的真格AI产品的性格测试。">
+  <link rel="stylesheet" href="css/nokia.css">
+  <link rel="stylesheet" href="css/responsive.css?v=2">
+  <!-- 字体加载 -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <h1 class="header__title">真格AI产品适配测试</h1>
+      <p class="header__subtitle">测一测你最适合的真格AI产品</p>
+    </header>
+    
+    <!-- 主要内容 -->
+    <main class="main">
+      <!-- 开始画面 -->
+      <section class="screen screen--start active" id="start-screen">
+        <div class="animal-illustrations">
+          <!-- Pixel Art Robot -->
+          <img src="images/robot.png" alt="Pixel Robot" class="pixel-mascot" style="image-rendering: pixelated; width: 120px; height: auto; margin: 0 auto; display: block;">
+        </div>
+        <div class="start-content">
+          <h2 class="start-title">你是哪种AI人格？</h2>
+          <p class="start-description">
+            回答10个问题，<br>
+            就能知道最适合你的真格AI产品是什么！
+          </p>
+          <div class="buttons">
+            <button class="btn btn--primary" id="start-quiz">开始测试！</button>
+            <!-- 隐藏亲子模式，因为不适用 -->
+            <button class="btn btn--secondary" id="parent-mode" style="display: none;">亲子模式</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 问题画面 -->
+      <section class="screen screen--quiz" id="quiz-screen">
+        <div class="progress-bar">
+          <div class="progress-bar__inner"></div>
+        </div>
+        <div class="question-container">
+          <h2 class="question-title" id="question-text"></h2>
+          <div class="answers" id="answers-container"></div>
+          <div class="navigation-buttons">
+            <button class="btn btn--muted" id="prev-question">上一题</button>
+            <button class="btn btn--primary" id="next-question">下一题</button>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 结果画面 -->
+      <section class="screen screen--result" id="result-screen">
+        <h2 class="result-title">你的结果</h2>
+        <div class="result-box">
+          <div class="result-animal" id="result-animal">
+            <!-- AI图标显示 -->
+          </div>
+          <div class="result-details">
+            <h3 class="animal-type" id="animal-type"></h3>
+            <p class="animal-description" id="animal-description"></p>
+            <div class="traits-container" id="traits-container">
+              <!-- 特征显示 -->
+            </div>
+          </div>
+        </div>
+        <div class="buttons result-buttons">
+          <button class="btn btn--share" id="save-result">保存结果</button>
+          <button class="btn btn--primary" id="print-result">打印结果</button>
+          <button class="btn btn--secondary" id="share-result">分享结果</button>
+          <button class="btn btn--primary" id="retry-quiz">重新测试</button>
+        </div>
+      </section>
+      
+      <!-- 亲子模式说明画面 (保留但隐藏) -->
+      <section class="screen screen--parent-info" id="parent-info-screen">
+        <h2 class="parent-info-title">模式说明</h2>
+        <div class="parent-info-content">
+          <p>此模式暂不可用。</p>
+        </div>
+        <div class="buttons">
+          <button class="btn btn--primary" id="start-parent-mode">开始</button>
+          <button class="btn btn--muted" id="back-to-start">返回</button>
+        </div>
+      </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+      <p>&copy; 2026 真格AI产品适配测试. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- 脚本加载 -->
+  <script src="js/animals.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/results.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // 初始化应用
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.initApp) {
+        window.initApp();
+      }
+    });
+  </script>
+</body>
+</html>
